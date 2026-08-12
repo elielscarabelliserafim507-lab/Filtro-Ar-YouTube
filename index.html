@@ -4,144 +4,43 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#09090b" />
-  <title>Filtro AR YouTube</title>
-  <meta name="description" content="Crie e teste filtros de imagem em realidade aumentada para canais do YouTube." />
+  <title>Filtros AR para YouTube</title>
+  <meta name="description" content="Explore filtros em realidade aumentada liberados por criadores do YouTube." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="Filtro AR YouTube">
-      <span class="brand-mark">AR</span>
-      <span>Filtro AR YouTube</span>
-    </a>
-    <nav>
-      <a href="#estudio">Estúdio AR</a>
-      <a href="#biblioteca">Biblioteca</a>
-      <a href="#como-funciona">Como funciona</a>
-    </nav>
+    <a class="brand" href="index.html"><span class="brand-mark">AR</span><span>Filtro AR YouTube</span></a>
+    <nav><a href="#filtros">Filtros</a><a href="#como-usar">Como usar</a></nav>
   </header>
 
   <main>
     <section class="hero" id="inicio">
       <div class="hero-copy">
-        <span class="eyebrow">REALIDADE AUMENTADA PARA CRIADORES</span>
-        <h1>Transforme a identidade do seu canal em um filtro AR.</h1>
-        <p>Envie uma imagem PNG, abra a câmera, ajuste o filtro na tela e gere uma foto pronta para compartilhar com sua comunidade.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#estudio">Criar meu filtro</a>
-          <a class="button ghost" href="#como-funciona">Ver como funciona</a>
-        </div>
+        <span class="eyebrow">FILTROS LIBERADOS PELOS CRIADORES</span>
+        <h1>Escolha um filtro e use na sua câmera.</h1>
+        <p>Aqui aparecem somente os filtros que os criadores já testaram e decidiram liberar para o público.</p>
+        <div class="hero-actions"><a class="button primary" href="#filtros">Explorar filtros</a></div>
       </div>
-      <div class="hero-card">
-        <div class="phone-preview">
-          <div class="phone-notch"></div>
-          <div class="demo-video">
-            <span class="demo-badge">AR AO VIVO</span>
-            <div class="demo-face">🙂</div>
-            <div class="demo-filter">★</div>
-          </div>
-        </div>
-      </div>
+      <div class="hero-card"><div class="phone-preview"><div class="phone-notch"></div><div class="demo-video"><span class="demo-badge">AR AO VIVO</span><div class="demo-face">🙂</div><div class="demo-filter">★</div></div></div></div>
     </section>
 
-    <section class="section" id="estudio">
-      <div class="section-heading">
-        <span class="eyebrow">ESTÚDIO AR</span>
-        <h2>Crie e teste seu filtro</h2>
-        <p>O processamento acontece no próprio navegador. Sua câmera não é enviada para este site.</p>
-      </div>
-
-      <div class="studio-grid">
-        <aside class="panel controls">
-          <label>
-            Nome do canal
-            <input id="channelName" type="text" placeholder="Ex.: Meu Canal" maxlength="80" />
-          </label>
-          <label>
-            Link do canal no YouTube
-            <input id="channelUrl" type="url" placeholder="https://youtube.com/@seucanal" />
-          </label>
-          <label class="upload-box" for="filterUpload">
-            <strong>Enviar filtro PNG</strong>
-            <span>Preferencialmente com fundo transparente</span>
-            <input id="filterUpload" type="file" accept="image/png,image/webp,image/jpeg" />
-          </label>
-
-          <div class="range-group">
-            <label for="scale">Tamanho do filtro <span id="scaleValue">100%</span></label>
-            <input id="scale" type="range" min="20" max="220" value="100" />
-          </div>
-          <div class="range-group">
-            <label for="opacity">Opacidade <span id="opacityValue">100%</span></label>
-            <input id="opacity" type="range" min="10" max="100" value="100" />
-          </div>
-          <div class="range-group">
-            <label for="rotate">Rotação <span id="rotateValue">0°</span></label>
-            <input id="rotate" type="range" min="-180" max="180" value="0" />
-          </div>
-
-          <div class="button-row">
-            <button id="startCamera" class="button primary" type="button">Abrir câmera</button>
-            <button id="flipCamera" class="button ghost" type="button">Virar câmera</button>
-          </div>
-          <div class="button-row">
-            <button id="capture" class="button primary" type="button">Capturar foto</button>
-            <button id="saveFilter" class="button ghost" type="button">Salvar filtro</button>
-          </div>
-          <button id="centerFilter" class="button subtle" type="button">Centralizar filtro</button>
-          <p class="hint">Dica: arraste o filtro diretamente sobre a câmera para reposicioná-lo.</p>
-        </aside>
-
-        <div class="panel camera-panel">
-          <div class="camera-stage" id="cameraStage">
-            <video id="video" autoplay playsinline muted></video>
-            <div id="cameraPlaceholder" class="camera-placeholder">
-              <div class="camera-icon">◉</div>
-              <strong>Sua câmera aparecerá aqui</strong>
-              <span>Clique em “Abrir câmera” e autorize o acesso.</span>
-            </div>
-            <img id="filterOverlay" alt="Filtro AR" draggable="false" />
-            <div class="live-chip">AR</div>
-          </div>
-          <div class="statusbar">
-            <span id="statusText">Câmera desligada</span>
-            <span>Compatível com celular e computador</span>
-          </div>
-        </div>
-      </div>
+    <section class="section" id="filtros">
+      <div class="section-heading"><span class="eyebrow">GALERIA PÚBLICA</span><h2>Filtros disponíveis</h2><p>Escolha um filtro liberado por um criador.</p></div>
+      <div id="publicFilters" class="filter-library"></div>
     </section>
 
-    <section class="section" id="biblioteca">
-      <div class="section-heading inline-heading">
-        <div>
-          <span class="eyebrow">BIBLIOTECA</span>
-          <h2>Seus filtros salvos</h2>
-        </div>
-        <button id="clearLibrary" class="button subtle" type="button">Limpar biblioteca</button>
-      </div>
-      <div id="filterLibrary" class="filter-library"></div>
-    </section>
-
-    <section class="section" id="como-funciona">
-      <div class="section-heading">
-        <span class="eyebrow">COMO FUNCIONA</span>
-        <h2>Do canal para a câmera em poucos passos</h2>
-      </div>
+    <section class="section" id="como-usar">
+      <div class="section-heading"><span class="eyebrow">COMO USAR</span><h2>É só escolher e abrir a câmera</h2></div>
       <div class="steps">
-        <article><span>01</span><h3>Envie sua arte</h3><p>Use uma imagem PNG transparente com logo, moldura, personagem ou elemento visual do canal.</p></article>
-        <article><span>02</span><h3>Abra a câmera</h3><p>O navegador usa a câmera do aparelho e exibe o filtro como uma camada de realidade aumentada.</p></article>
-        <article><span>03</span><h3>Ajuste e capture</h3><p>Mova, redimensione e gire o filtro. Depois, capture a composição em uma imagem.</p></article>
+        <article><span>01</span><h3>Escolha</h3><p>Encontre um filtro que já foi liberado pelo criador.</p></article>
+        <article><span>02</span><h3>Use</h3><p>Abra o filtro e permita o acesso à câmera.</p></article>
+        <article><span>03</span><h3>Compartilhe</h3><p>Capture sua foto e compartilhe com outras pessoas.</p></article>
       </div>
     </section>
   </main>
 
-  <canvas id="captureCanvas" hidden></canvas>
-
-  <footer>
-    <strong>Filtro AR YouTube</strong>
-    <span>Uma plataforma experimental para criadores digitais.</span>
-  </footer>
-
-  <script src="app.js"></script>
+  <footer><strong>Filtro AR YouTube</strong><span>Galeria pública de filtros em realidade aumentada.</span></footer>
+  <script src="gallery.js"></script>
 </body>
 </html>
