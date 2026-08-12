@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#09090b"><title>Estúdio do Criador | Filtro AR YouTube</title><link rel="stylesheet" href="styles.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080808"><title>Estúdio do Criador | Júlio e Eu</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="theme.css"></head>
 <body>
-<header class="topbar"><div class="brand"><span class="brand-mark">AR</span><span>Estúdio do Criador</span></div></header>
+<header class="topbar"><div class="brand"><span class="brand-mark">AR</span><span>Estúdio do Criador • Júlio e Eu</span></div></header>
 <main>
 <section class="section">
 <div class="section-heading"><span class="eyebrow">ÁREA DO CRIADOR</span><h1>Crie, teste e só depois publique.</h1><p>Esta área não aparece na navegação da página pública. O filtro fica em rascunho enquanto você testa.</p></div>
 <div class="studio-grid">
 <aside class="panel controls">
-<label>Nome do canal<input id="channelName" type="text" placeholder="Ex.: Meu Canal" maxlength="80"></label>
-<label>Link do canal no YouTube<input id="channelUrl" type="url" placeholder="https://youtube.com/@seucanal"></label>
+<label>Nome do canal<input id="channelName" type="text" placeholder="Júlio e Eu" maxlength="80" value="Júlio e Eu"></label>
+<label>Link do canal no YouTube<input id="channelUrl" type="url" placeholder="https://youtube.com/@julioeeu" value="https://youtube.com/@julioeeu"></label>
 <label class="upload-box" for="filterUpload"><strong>Enviar filtro</strong><span>PNG transparente recomendado</span><input id="filterUpload" type="file" accept="image/png,image/webp,image/jpeg"></label>
 <div class="range-group"><label for="scale">Tamanho <span id="scaleValue">100%</span></label><input id="scale" type="range" min="20" max="220" value="100"></div>
 <div class="range-group"><label for="opacity">Opacidade <span id="opacityValue">100%</span></label><input id="opacity" type="range" min="10" max="100" value="100"></div>
@@ -25,4 +25,4 @@
 </section>
 <section class="section"><div class="section-heading inline-heading"><div><span class="eyebrow">RASCUNHOS</span><h2>Filtros em teste</h2></div><button id="clearLibrary" class="button subtle" type="button">Limpar rascunhos</button></div><div id="filterLibrary" class="filter-library"></div></section>
 </main>
-<canvas id="captureCanvas" hidden></canvas><footer><strong>Estúdio do Criador</strong><span>Crie → teste → libere.</span></footer><script src="app.js"></script><script src="creator.js"></script></body></html>
+<canvas id="captureCanvas" hidden></canvas><footer><strong>Estúdio do Criador • Júlio e Eu</strong><span>Crie → teste → libere.</span></footer><script src="app.js"></script><script src="creator.js"></script></body></html>
